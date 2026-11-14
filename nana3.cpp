@@ -10,6 +10,7 @@ int main() {
     int total[5];
     int i;
     int grandtotal=0;
+    do {
     for(i=0;i<5;i++)
         {
             cout<<"menu ";
@@ -28,6 +29,12 @@ int main() {
     cout<<"TOTAL SEMUA PESANAN ADALAH: ";
     cout<<grandtotal<<endl;
     cout<<"------------------------------------"<<endl;
+
+        cout<<"apakah anda mau mengulang, tekan y atau Y "<<endl;
+        cin>>ulang;
+       }
+       while (ulang=="y"||ulang=="Y");
+    
     system("pause");
     
     return 0;
