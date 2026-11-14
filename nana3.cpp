@@ -1,41 +1,45 @@
-// Online C++ compiler (editor)
-// Write and run C++ online using this editor.
 
 #include <iostream>
+#include <string>
 using namespace std;
+
 int main() {
-    string menu[5]={"soto","rawon","pecel","teh","kopi"};
-    int harga[5]={15000,20000,10000,3000,5000};
+    string menu[5] = {"soto", "rawon", "pecel", "teh", "kopi"};
+    int harga[5] = {15000, 20000, 10000, 3000, 5000};
     int porsi[5];
     int total[5];
+    int grandtotal;
     int i;
-    int grandtotal=0;
-    do {
-    for(i=0;i<5;i++)
-        {
-            cout<<"menu ";
-            cout<<menu[i]<<endl;
-            cout<<"harga ";
-            cout<<harga[i]<<endl;
-            cout<<"masukkan porsi ";
-            cin>>porsi[i];
-            total[i]=porsi[i]*harga[i];
-            cout<<"total ";
-            cout<<total[i]<<endl;
-            cout<<"____________"<<endl;
-            grandtotal=grandtotal+total[i];
-        }
-    cout<<"------------------------------------"<<endl;
-    cout<<"TOTAL SEMUA PESANAN ADALAH: ";
-    cout<<grandtotal<<endl;
-    cout<<"------------------------------------"<<endl;
+    char ulang;
 
-        cout<<"apakah anda mau mengulang, tekan y atau Y "<<endl;
-        cin>>ulang;
-       }
-       while (ulang=="y"||ulang=="Y");
-    
-    system("pause");
-    
+    do {
+        grandtotal = 0;
+
+        for (i = 0; i < 5; i++) {
+            cout << "Menu: " << menu[i] << endl;
+            cout << "Harga: " << harga[i] << endl;
+            cout << "Masukkan porsi: ";
+            cin >> porsi[i];
+
+            total[i] = porsi[i] * harga[i];
+
+            cout << "Total: " << total[i] << endl;
+            cout << "____________" << endl;
+
+            grandtotal += total[i];
+        }
+
+        cout << "------------------------------------" << endl;
+        cout << "TOTAL SEMUA PESANAN ADALAH: "
+             << grandtotal << endl;
+        cout << "------------------------------------" << endl;
+
+        cout << "Apakah anda mau mengulang? Tekan y atau Y: ";
+        cin >> ulang;
+
+    } while (ulang == 'y' || ulang == 'Y');
+
+    cout << "Terima kasih!" << endl;
+
     return 0;
 }
