@@ -25,6 +25,13 @@ jobs:
         run: |
           g++ -std=c++17 -O2 -static nana3.cpp -o nana3.exe
 
+      - name: Verify EXE
+        shell: pwsh
+        run: |
+          if (!(Test-Path "nana3.exe")) {
+            throw "Compilation failed: nana3.exe not found"
+          }
+
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
